@@ -1,12 +1,12 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Group, Post
 
-POSTS_ON_MAIN = 10
+from django.conf import settings
+
+from .models import Group, Post
 
 
 def index(request):
-    posts = Post.objects.all()
-    # В словаре context отправляем информацию в шаблон
+    posts = Post.objects.all()[0:10]
     context = {
         'posts': posts,
     }
@@ -16,7 +16,7 @@ def index(request):
 # Create your views here.
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.all()[:POSTS_ON_MAIN]
+    posts = group.posts.all()[:settings.POSTS_ON_MAIN]
     context = {
         'group': group,
         'posts': posts,
