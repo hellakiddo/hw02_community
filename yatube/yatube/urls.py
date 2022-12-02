@@ -22,6 +22,3 @@ urlpatterns = [
     path('group/<slug:slug>/', include('posts.urls', namespace='posts'))
 
 ]
-
-
-
