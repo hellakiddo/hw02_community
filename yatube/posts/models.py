@@ -12,6 +12,10 @@ class Group(models.Model):
     description = models.TextField('Описание группы', max_length=10000,
                                    default='some string', )
 
+    class Meta:
+        verbose_name = 'Группы'
+        verbose_name_plural = 'Группы'
+
     def __str__(self):
         return self.title
 
@@ -29,7 +33,7 @@ class Post(models.Model):
                               verbose_name='Группа')
 
     class Meta:
-        ordering = ('-pub_date', )
+        ordering = ('-pub_date',)
         verbose_name_plural = 'Сортировка по дате публикации'
 
     def __str__(self):

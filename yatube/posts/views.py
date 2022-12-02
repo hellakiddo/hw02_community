@@ -13,7 +13,6 @@ def index(request):
     return render(request, 'posts/index.html', context)
 
 
-# Create your views here.
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = group.posts.all()[:settings.POSTS_ON_MAIN]
