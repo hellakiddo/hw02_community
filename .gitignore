@@ -1,3 +1,5 @@
+yatube/static
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -145,4 +147,4 @@ dmypy.json
 
 .mypy_cache
 
-.yatube/static
+
