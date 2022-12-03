@@ -1,12 +1,12 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 
-from django.conf import settings
 
 from .models import Group, Post
 
 
 def index(request):
-    posts = Post.objects.all()[0:10]
+    posts = Post.objects.all()[:settings.POSTS_ON_MAIN]
     context = {
         'posts': posts,
     }
