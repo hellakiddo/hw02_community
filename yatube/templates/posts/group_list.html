@@ -5,8 +5,8 @@
     <h1>
       {{ group }}
     </h1>
+    <p>{{ group.description|linebreaksbr }}</p>
     {% for post in posts %}
-    <p>{{ group.description }}</p>
       <article>
         <ul>
           <li>
